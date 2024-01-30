@@ -46,7 +46,7 @@ namespace Tic_Tac_Toe__3_12_
                         row = ((position - (position % 3)) / 3) - 1;
                     }
 
-                    // Setting the write letter
+                    // Setting the right letter
                     if (guess[k, 1] % 2 == 0)
                     {
                         board[row, col] = "O";

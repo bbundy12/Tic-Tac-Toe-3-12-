@@ -16,7 +16,6 @@ namespace Tic_Tac_Toe__3_12_
         public void printBoard(int[,] guess)
         {
            
-
             // Initialize the board with empty slots
             for (int i = 0; i < 3; i++)
             {
@@ -120,12 +119,13 @@ namespace Tic_Tac_Toe__3_12_
             {
                 return $"Congratulations! {winner}'s win!! ";
             }
-
-            //Print message if there is a winner
-            if (draw)
+            else if (draw)
             {
-                return $"" +
-                    $"The match is a draw. Better luck next time! ";
+                return "The match is a draw. Better luck next time!";
+            }
+            else
+            {
+                return "";
             }
 
 

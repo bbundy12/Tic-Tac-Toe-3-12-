@@ -71,7 +71,7 @@ namespace Tic_Tac_Toe__3_12_
         }
 
         //  Contain a method that receives the game board array as input and returns if there is a winner and who it was
-        public string CheckWinner(string[,] board) 
+        public bool CheckWinner(string[,] board) 
         {
             string winner = "";
             bool gameOver = false;
@@ -82,29 +82,40 @@ namespace Tic_Tac_Toe__3_12_
             {
                 // Check rows
                 if (board[i, 0] == board[i, 1] && board[i, 1] == board[i, 2] && board[i, 0] != "_")
+                {
                     winner = board[i, 0];
                     gameOver = true;
+                }                    
 
                 // Check columns
                 if (board[0, i] == board[1, i] && board[1, i] == board[2, i] && board[0, i] != "_")
+                {
                     winner = board[0, i];
                     gameOver = true;
+                }
+                    
             }
 
             // Check diagonals
             if (board[0, 0] == board[1, 1] && board[1, 1] == board[2, 2] && board[0, 0] != "_")
-                winner= board[0, 0];
+            {
+                winner = board[0, 0];
                 gameOver = true;
+            }
+               
             if (board[0, 2] == board[1, 1] && board[1, 1] == board[2, 0] && board[0, 2] != "_")
-                winner= board[0, 2];
+            {
+                winner = board[0, 2];
                 gameOver = true;
+            }
+                
 
             // Determinging if there is a draw
             for (int i = 0; i < 3; i++)
             {
                 for (int j = 0; j < 3; j++)
                 {
-                    if (board[i, j] != "_")
+                    if (board[i, j] == "_")
                     {
                         draw = false;
                         break;
@@ -113,18 +124,20 @@ namespace Tic_Tac_Toe__3_12_
 
             }
 
-            //Print message if there is a winner
+            //Print message
             if (gameOver)
             {
-                return $"Congratulations! {winner}'s win!! ";
+                Console.WriteLine($"Congratulations! {winner} wins!");
+                return true;
             }
             else if (draw)
             {
-                return "The match is a draw. Better luck next time!";
+                Console.WriteLine("The match is a draw. Better luck next time!");
+                return true;
             }
             else
             {
-                return "";
+                return false;
             }
 
 

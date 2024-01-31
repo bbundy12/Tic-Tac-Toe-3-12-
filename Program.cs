@@ -79,8 +79,10 @@ do
         string[,] board = gb.printBoard(guess);
 
         ////• Check for a winner by calling the method in the supporting class, and notify the players 
-        gb.CheckWinner(board);
-        
+        if (i >= 5)
+        {
+            gameOver = gb.CheckWinner(board);
+        }
         
 
     }

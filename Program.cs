@@ -21,9 +21,8 @@ Console.WriteLine("Welcome to Tic-Tac-Toe!");
 //GameBoard.Board();
 
 //• Ask each player in turn for their choice and update the game board array
-do
-{
-    for (int i = 1; i < 10; i++) //Loop for guesses to auto-increment move number
+
+    for (int i = 1; i < 10 && !gameOver; i++) //Loop for guesses to auto-increment move number
     {
         string letter = "";
 
@@ -87,14 +86,3 @@ do
 
     }
 
-
-
-
-
-
-
-
-
-
-    //when a win has occurred and which player won the game
-} while (!gameOver);

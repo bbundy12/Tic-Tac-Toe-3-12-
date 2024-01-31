@@ -133,9 +133,8 @@ namespace Tic_Tac_Toe__3_12_
 
 
 
-    }
-        // Board method which creats board
-        private static void Board()
+       /* // Board method which creats board
+        public static void Board()
         {
             Console.WriteLine("     |     |      ");
             Console.WriteLine("  {0}  |  {1}  |  {2}", arr[1], arr[2], arr[3]);
@@ -146,7 +145,7 @@ namespace Tic_Tac_Toe__3_12_
             Console.WriteLine("     |     |      ");
             Console.WriteLine("  {0}  |  {1}  |  {2}", arr[7], arr[8], arr[9]);
             Console.WriteLine("     |     |      ");
-        }
+        }*/
 
     }
 }

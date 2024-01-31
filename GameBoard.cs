@@ -10,12 +10,13 @@ namespace Tic_Tac_Toe__3_12_
 
     internal class GameBoard
     {
-        string[,] board = new string[3, 3];
+        
 
         // Contain a method that prints the board based on the information passed to it
-        public void printBoard(int[,] guess)
+        public string[,] printBoard(int[,] guess) 
         {
-           
+            string[,] board = new string[3, 3];
+
             // Initialize the board with empty slots
             for (int i = 0; i < 3; i++)
             {
@@ -25,6 +26,7 @@ namespace Tic_Tac_Toe__3_12_
                 }
             }
 
+            // 
             for (int k = 0; k < guess.GetLength(0); k++ )
             {
                 int row = 0;
@@ -34,17 +36,9 @@ namespace Tic_Tac_Toe__3_12_
                 // Setting the correct coordinates with letters based on the guess array
                 if (position != 0)
                 {
-                    // Calculating the coordinates with the letters
-                    if (position % 3 == 0)
-                    {
-                        row = (position / 3) - 1;
-                        col = 0;
-                    }
-                    else if (position % 3 != 0)
-                    {
-                        col = (position % 3) - 1;
-                        row = ((position - (position % 3)) / 3) - 1;
-                    }
+                    // Set the correct coordinates for the letter to go based on the guess
+                    row = (position - 1) / 3;
+                    col = (position - 1) % 3;
 
                     // Setting the right letter
                     if (guess[k, 1] % 2 == 0)
@@ -55,24 +49,29 @@ namespace Tic_Tac_Toe__3_12_
                     {
                         board[row, col] = "X";
                     }
-
-                    // Print the board
-                    for (int i = 0; i < 3; i++)
-                    {
-                        for (int j = 0; j < 3; j++)
-                        {
-                            Console.Write(board[i, j] + " ");
-                        }
-                        Console.WriteLine();
-                    }
+                    
                 }
+              
+            }
 
-              }
+            // Print the board
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    Console.Write(board[i, j] + " ");
+                }
+                Console.WriteLine();
+
+            }
+
+            return board;
+          
             
         }
 
         //  Contain a method that receives the game board array as input and returns if there is a winner and who it was
-        public string CheckWinner(string[,] gameBoard) 
+        public string CheckWinner(string[,] board) 
         {
             string winner = "";
             bool gameOver = false;

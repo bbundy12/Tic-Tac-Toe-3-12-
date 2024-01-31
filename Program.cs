@@ -25,7 +25,18 @@ do
 {
     for (int i = 1; i < 10; i++) //Loop for guesses to auto-increment move number
     {
-        Console.WriteLine("Where do you want to place your piece?");
+        string letter = "";
+
+        if (i % 2 == 0)
+        {
+            letter = "O";
+        }
+        else
+        {
+            letter = "X";
+        }
+
+        Console.WriteLine($"It is {letter}'s turn. Where do you want to place your piece?");
 
         bool validInput = false;
 
@@ -65,7 +76,12 @@ do
         guess[i - 1, 1] = i;
 
         //• Print the board by calling the method in the supporting class
-        gb.printBoard(guess);
+        string[,] board = gb.printBoard(guess);
+
+        ////• Check for a winner by calling the method in the supporting class, and notify the players 
+        gb.CheckWinner(board);
+        
+        
 
     }
 
@@ -75,7 +91,7 @@ do
 
 
 
-    //• Check for a winner by calling the method in the supporting class, and notify the players 
+
 
 
     //when a win has occurred and which player won the game

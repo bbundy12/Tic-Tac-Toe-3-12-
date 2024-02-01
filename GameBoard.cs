@@ -127,7 +127,7 @@ namespace Tic_Tac_Toe__3_12_
             //Print message
             if (gameOver)
             {
-                Console.WriteLine($"Congratulations! {winner} wins!");
+                Console.WriteLine($"\nCongratulations! {winner} wins!");
                 return true;
             }
             else if (draw)

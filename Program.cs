@@ -18,6 +18,8 @@ bool gameOver = false;
 
 //Welcome the user to the game
 Console.WriteLine("Welcome to Tic-Tac-Toe!");
+Console.WriteLine("\nUse the following grid to know what numbers correlate with which position\n");
+Console.WriteLine("\t\t1 2 3\n\t\t4 5 6\n\t\t7 8 9\n");
 
 //Method to create board at the beginning
 //GameBoard.Board();
@@ -37,13 +39,14 @@ Console.WriteLine("Welcome to Tic-Tac-Toe!");
             letter = "X";
         }
 
-        Console.WriteLine($"It is {letter}'s turn. Where do you want to place your piece?");
+        Console.WriteLine($"\nIt is {letter}'s turn. Where do you want to place your piece?");
 
         bool validInput = false;
 
         while (!validInput)// Get a valid input
         {
             input = Console.ReadLine();
+            Console.WriteLine();
 
             // Check if input is a single character and represents a digit
             if (input.Length == 1 && char.IsDigit(input[0]))

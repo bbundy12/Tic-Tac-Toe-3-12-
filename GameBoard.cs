@@ -132,7 +132,7 @@ namespace Tic_Tac_Toe__3_12_
             }
             else if (draw)
             {
-                Console.WriteLine("The match is a draw. Better luck next time!");
+                Console.WriteLine("\nThe match is a draw. Better luck next time!");
                 return true;
             }
             else

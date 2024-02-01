@@ -90,4 +90,5 @@ Console.WriteLine("\t\t1 2 3\n\t\t4 5 6\n\t\t7 8 9\n");
         
 
     }
-
+Console.WriteLine("Press Enter to exit the game.");
+Console.ReadLine();

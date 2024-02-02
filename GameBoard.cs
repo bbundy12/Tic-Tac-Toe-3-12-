@@ -26,14 +26,13 @@ namespace Tic_Tac_Toe__3_12_
                 }
             }
 
-            // 
+            //Setting the correct coordinates with letters based on the guess array
             for (int k = 0; k < guess.GetLength(0); k++ )
             {
                 int row = 0;
                 int col = 0;
                 int position = guess[k, 0];
-
-                // Setting the correct coordinates with letters based on the guess array
+                
                 if (position != 0)
                 {
                     // Set the correct coordinates for the letter to go based on the guess
@@ -77,7 +76,6 @@ namespace Tic_Tac_Toe__3_12_
             bool gameOver = false;
             bool draw = true;
 
-            // for loop
             for (int i = 0; i < 3 && !gameOver; i++)
             {
                 // Check rows
@@ -121,7 +119,6 @@ namespace Tic_Tac_Toe__3_12_
                         break;
                     }
                 }
-
             }
 
             //Print message
@@ -139,25 +136,6 @@ namespace Tic_Tac_Toe__3_12_
             {
                 return false;
             }
-
-
         }
-
-
-
-       /* // Board method which creats board
-        public static void Board()
-        {
-            Console.WriteLine("     |     |      ");
-            Console.WriteLine("  {0}  |  {1}  |  {2}", arr[1], arr[2], arr[3]);
-            Console.WriteLine("_____|_____|_____ ");
-            Console.WriteLine("     |     |      ");
-            Console.WriteLine("  {0}  |  {1}  |  {2}", arr[4], arr[5], arr[6]);
-            Console.WriteLine("_____|_____|_____ ");
-            Console.WriteLine("     |     |      ");
-            Console.WriteLine("  {0}  |  {1}  |  {2}", arr[7], arr[8], arr[9]);
-            Console.WriteLine("     |     |      ");
-        }*/
-
     }
 }

@@ -14,18 +14,12 @@ int position = 0;
 
 bool gameOver = false;
 
-//testing 
-
 //Welcome the user to the game
 Console.WriteLine("Welcome to Tic-Tac-Toe!");
 Console.WriteLine("\nUse the following grid to know what numbers correlate with which position\n");
 Console.WriteLine("\t\t1 2 3\n\t\t4 5 6\n\t\t7 8 9\n");
 
-//Method to create board at the beginning
-//GameBoard.Board();
-
-//• Ask each player in turn for their choice and update the game board array
-
+//Ask each player in turn for their choice and update the game board array
     for (int i = 1; i < 10 && !gameOver; i++) //Loop for guesses to auto-increment move number
     {
         string letter = "";
@@ -76,18 +70,17 @@ Console.WriteLine("\t\t1 2 3\n\t\t4 5 6\n\t\t7 8 9\n");
         //Put position number into first section of guess variable
         guess[i - 1, 0] = position;
 
-        //Put i into the second section of the guess variable
+        //Put the turn number into the second section of the guess variable
         guess[i - 1, 1] = i;
 
-        //• Print the board by calling the method in the supporting class
+        //Print the board by calling the method in the supporting class
         string[,] board = gb.printBoard(guess);
 
-        ////• Check for a winner by calling the method in the supporting class, and notify the players 
+        // Check for a winner by calling the method in the supporting class, and notify the players 
         if (i >= 5)
         {
             gameOver = gb.CheckWinner(board);
-        }
-        
+        }       
 
     }
 Console.WriteLine("Press Enter to exit the game.");
